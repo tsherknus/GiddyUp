@@ -1,0 +1,78 @@
+<!--<div>
+<section class="signup-form">
+  <h2></h2>
+<form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" #submitForm="ngForm" (ngSubmit)="onSubmit(submitForm)">
+  <mat-form-field>
+    <input type="email" matInput placeholder="Email" name="Email" email required ngModel #emailInput="ngModel">
+
+    <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+    <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field hintLabel="Should be at least 8 characters long.">
+    <input type="password" matInput placeholder="Password" name="Password" maxlength="8" required ngModel
+    #pwInput="ngModel" >
+    <mat-hint align="end">{{pwInput.value?.length}}/6</mat-hint>
+    <mat-error>Has to be at least 8 characters long.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="First Name" name="First Name" required ngModel>
+    <mat-error>Please enter your first name.</mat-error>
+  </mat-form-field>
+
+ <mat-form-field>
+    <input matInput placeholder="Last Name" name="Last Name" required ngModel>
+   <mat-error>Please enter your last name.</mat-error>
+  </mat-form-field>
+  <mat-checkbox labelPosition="" ngModel name="agree" required color="primary">Agree to Terms and Conditions</mat-checkbox>
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+
+</form>
+</section>
+</div>-->
+
+<div class="rform" fxLayout="column" fxLayoutAlign=" center center" >
+<mat-card class="rcard" >
+  <mat-card-header>
+    <div mat-card-avatar ></div>
+    <mat-card-title>Registration Form</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" #submitForm="ngForm"
+          (ngSubmit)="onSubmit(submitForm)">
+      <mat-form-field>
+        <input type="email" matInput placeholder="Email" name="Email" email required ngModel #emailInput="ngModel">
+
+        <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field hintLabel="Should be at least 8 characters long.">
+        <input type="password" matInput placeholder="Password" name="Password" maxlength="8" required ngModel
+               #pwInput="ngModel" >
+        <mat-hint align="end">{{pwInput.value?.length}}/8</mat-hint>
+        <mat-error>Has to be at least 8 characters long.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="First Name" name="firstName" required ngModel>
+        <mat-error>Please enter your first name.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Last Name" name="lastName" required ngModel>
+        <mat-error>Please enter your last name.</mat-error>
+      </mat-form-field>
+
+      <mat-checkbox labelPosition="" ngModel name="agree" required color="primary">Agree to Terms and Conditions</mat-checkbox>
+             <button  type="submit" mat-raised-button color="accent" [disabled]="submitForm.invalid" >Submit</button>
+    </form>
+  </mat-card-content>
+  <mat-card-actions >
+
+
+  </mat-card-actions>
+</mat-card>
+</div>

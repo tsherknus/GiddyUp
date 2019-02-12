@@ -1,0 +1,22 @@
+mat-form-field {
+  width: 300px;
+}
+.signup-form{
+
+  margin: auto;
+  width: 25%;
+  border: 3px solid green;
+  padding: 10px;
+  background-color: silver;
+
+}
+
+
+.btnsubmit{
+  align-items: center;
+}
+.login-form{
+
+  margin-top: 15px;
+
+}

@@ -1,0 +1,38 @@
+
+<div class="login-form" fxLayout="column" fxLayoutAlign=" center center" >
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title class="login"> Login </mat-card-title>
+  </mat-card-header>
+
+  <mat-divider class="hr-line "></mat-divider>
+
+<mat-card-content>
+
+<form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" #submitForm="ngForm"
+      (ngSubmit)="onSubmit(submitForm)">
+
+
+  <mat-form-field>
+    <input type="email" matInput placeholder="Email" name="Email" email required ngModel #emailInput="ngModel">
+
+    <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>
+    <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field hintLabel="Should be at least 8 characters long.">
+    <input type="password" matInput placeholder="Password" name="Password" maxlength="8" required ngModel
+           #pwInput="ngModel" >
+    <mat-hint align="end">{{pwInput.value?.length}}/8</mat-hint>
+    <mat-error>Has to be at least 8 characters long.</mat-error>
+  </mat-form-field>
+  <button  type="submit" mat-raised-button color="accent" [disabled]="submitForm.invalid" >Submit</button>
+</form>
+
+
+
+</mat-card-content>
+
+
+</mat-card>
+</div>

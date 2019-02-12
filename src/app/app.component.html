@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation" >
+<app-sidenav-list (closenavToggle)="sidenav.toggle()" ></app-sidenav-list>
+  </mat-sidenav>
+<mat-sidenav-content >
+<app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+  <!--my router outlet, create routes to other pages-->
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
