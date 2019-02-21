@@ -18,6 +18,7 @@ import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import {AuthService} from './auth/auth.service';
+import {MapsComponent} from "./maps/maps.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {AuthService} from './auth/auth.service';
     ChatComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,

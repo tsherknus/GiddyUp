@@ -8,6 +8,7 @@ import {DriverloginComponent} from './driverauth/driverlogin/driverlogin.compone
 import {DriversignupComponent} from './driverauth/driversignup/driversignup.component';
 import {FAQInfoComponent} from './FAQ/faqinfo/faqinfo.component';
 import {ChatComponent} from './Support/chat/chat.component';
+import {MapsComponent} from "./maps/maps.component";
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path: 'driversignup', component: DriversignupComponent},
   {path: 'faqinfo', component: FAQInfoComponent},
   {path: 'chat', component: ChatComponent},
-
+  {path: 'maps', component: MapsComponent}
 
 
 ]
