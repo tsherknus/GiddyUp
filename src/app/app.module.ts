@@ -19,6 +19,9 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import {AuthService} from './auth/auth.service';
 import {MapsComponent} from "./maps/maps.component";
+import {AgmCoreModule} from "@agm/core";
+import {CommonModule} from "@angular/common";
+import {AgmDirectionModule} from "agm-direction";
 
 @NgModule({
   declarations: [
@@ -42,6 +45,11 @@ import {MapsComponent} from "./maps/maps.component";
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyClGpw2vRKj6TixIPExfQDmGsyjNoPDU3M'
+    }),
+    AgmDirectionModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

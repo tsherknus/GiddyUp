@@ -1,3 +1,40 @@
+
+
 <div>
-  <iframe width="355" height="579" frameborder="0" style="border:0; padding-left: 2px; padding-top: 2px" src="https://www.google.com/maps/embed/v1/directions?origin=Venice%2C%20FL&destination=Tampa%2C%20FL&key=AIzaSyDkuOrX7ZGHC2XxCxvdn0XhYH9o5qKHqwQ" allowfullscreen></iframe>
+  <agm-map [latitude]="lat" [longitude]="lng" [fitBounds]="true" [maxZoom]="15">
+    <div>
+      <agm-marker
+        [latitude]="lat"
+        [longitude]="lng"
+        [agmFitBounds]="true"
+        [label]="labelOptions"></agm-marker>
+    </div>
+    <div *ngIf="searching">
+      <agm-marker
+        *ngFor="let data of test; let i = index"
+        [latitude]="data.latitude"
+        [longitude]="data.longitude"
+        [agmFitBounds]="true"
+        (markerClick)="riderSelected(data.latitude, data.longitude)"></agm-marker>
+    </div>
+    <div *ngIf="rideInProgress">
+      <agm-marker
+        [latitude]="riderLat"
+        [longitude]="riderLong"
+        [agmFitBounds]="true"></agm-marker>
+    </div>
+  </agm-map>
 </div>
+
+<div fxLayout="column">
+  <button *ngIf="!rider && !searching && !rideInProgress"
+             mat-raised-button
+             (click)="findRiders()"
+             color="primary">Give A Ride</button>
+  <button *ngIf="!rider && searching"
+          mat-raised-button
+          (click)="cancelFind()"
+          color="primary">Cancel</button>
+</div>
+
+
