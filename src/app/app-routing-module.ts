@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {SignupComponent} from './auth/signup/signup.component';
@@ -9,6 +9,7 @@ import {DriversignupComponent} from './driverauth/driversignup/driversignup.comp
 import {FAQInfoComponent} from './FAQ/faqinfo/faqinfo.component';
 import {ChatComponent} from './Support/chat/chat.component';
 import {MapsComponent} from "./maps/maps.component";
+import {DemoComponent} from "./demo/demo.component";
 
 
 const routes: Routes = [
@@ -20,9 +21,8 @@ const routes: Routes = [
   {path: 'driversignup', component: DriversignupComponent},
   {path: 'faqinfo', component: FAQInfoComponent},
   {path: 'chat', component: ChatComponent},
-  {path: 'maps', component: MapsComponent}
-
-
+  {path: 'maps', component: MapsComponent},
+  {path: 'demo', component: DemoComponent}
 ]
 
 @NgModule({

@@ -1,40 +1,9 @@
-
-
-<div>
-  <agm-map [latitude]="lat" [longitude]="lng" [fitBounds]="true" [maxZoom]="15">
-    <div>
-      <agm-marker
-        [latitude]="lat"
-        [longitude]="lng"
-        [agmFitBounds]="true"
-        [label]="labelOptions"></agm-marker>
-    </div>
-    <div *ngIf="searching">
-      <agm-marker
-        *ngFor="let data of test; let i = index"
-        [latitude]="data.latitude"
-        [longitude]="data.longitude"
-        [agmFitBounds]="true"
-        (markerClick)="riderSelected(data.latitude, data.longitude)"></agm-marker>
-    </div>
-    <div *ngIf="rideInProgress">
-      <agm-marker
-        [latitude]="riderLat"
-        [longitude]="riderLong"
-        [agmFitBounds]="true"></agm-marker>
-    </div>
+<div class="container">
+  <h1>Angular 2 + Google Maps Places Autocomplete</h1>
+  <div class="form-group">
+    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
   </agm-map>
 </div>
-
-<div fxLayout="column">
-  <button *ngIf="!rider && !searching && !rideInProgress"
-             mat-raised-button
-             (click)="findRiders()"
-             color="primary">Give A Ride</button>
-  <button *ngIf="!rider && searching"
-          mat-raised-button
-          (click)="cancelFind()"
-          color="primary">Cancel</button>
-</div>
-
-

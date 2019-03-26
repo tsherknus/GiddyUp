@@ -1,0 +1,59 @@
+<div *ngIf="test != undefined">
+
+  <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center">
+    <div>
+      {{test?.errorMessage}}
+    </div>
+    <div>
+      {{test?.errorType}}
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput
+               [(ngModel)]="test.errorMessage"
+               [value]="test?.errorMessage"
+               (keyup)="changeDynamically()"
+               placeholder="Error Message">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput
+               [(ngModel)]="test.errorType"
+               [value]="test?.errorType"
+               (keyup)="changeDynamically()"
+               placeholder="Error Type">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="1em">
+    <mat-card>
+      <mat-card-title>Error Message</mat-card-title>
+      <mat-card-content>{{test?.errorMessage}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Error Type</mat-card-title>
+      <mat-card-content>{{test?.errorType}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Hello World</mat-card-title>
+      <mat-card-content>Hello World</mat-card-content>
+    </mat-card>
+  </div>
+  <div fxLayout="column" fxLayoutGap="1em">
+    <mat-card>
+      <mat-card-title>Error Message</mat-card-title>
+      <mat-card-content>{{test?.errorMessage}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Error Type</mat-card-title>
+      <mat-card-content>{{test?.errorType}}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Hello World</mat-card-title>
+      <mat-card-content>Hello World</mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
